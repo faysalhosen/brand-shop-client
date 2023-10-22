@@ -32,6 +32,7 @@ const Header = () => {
                 <li><NavLink to={'/addCart'}>Add cart</NavLink></li>
                 <li><NavLink to={'/myCart'}>My Cart</NavLink></li>
                 <li><NavLink to={'/login'}>Login</NavLink></li>
+                <li><NavLink to={'/register'}>Register</NavLink></li>
               </ul>
             </div>
             <a className="text-xl sm:text-2xl font-medium">Gadget Gear</a>
@@ -42,6 +43,7 @@ const Header = () => {
               <li><NavLink to={'/addProduct'}>Add Products</NavLink></li>
               <li><NavLink to={'/myCart'}>My Cart</NavLink></li>
               <li><NavLink to={'/login'}>Login</NavLink></li>
+              <li><NavLink to={'/register'}>Register</NavLink></li>
             </ul>
           </div>
           <div className="navbar-end">

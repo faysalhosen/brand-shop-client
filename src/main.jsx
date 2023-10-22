@@ -8,6 +8,8 @@ import {
 import Root from './Root.jsx';
 import Home from './Home.jsx';
 import AddProduct from './AddProduct';
+import Login from './Login/Login';
+import Register from './Login/Register';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -21,6 +23,14 @@ const router = createBrowserRouter([
       {
         path: '/addProduct',
         element: <AddProduct></AddProduct>
+      },
+      {
+        path: '/login',
+        element: <Login></Login>
+      },
+      {
+        path: '/register',
+        element: <Register></Register>
       }
     ]
   },

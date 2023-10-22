@@ -33,6 +33,9 @@ const AddProduct = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
+                if(data.acknowledged){
+                    alert('Product added successfully')
+                }
             });
     };
     return (
