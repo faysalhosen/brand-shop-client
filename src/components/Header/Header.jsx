@@ -28,6 +28,7 @@ const Header = () => {
                 className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 !text-base"
               >
                 <li><NavLink to={'/'}>Home</NavLink></li>
+                <li><NavLink to={'/addProduct'}>AddProduct</NavLink></li>
                 <li><NavLink to={'/addCart'}>Add cart</NavLink></li>
                 <li><NavLink to={'/myCart'}>My Cart</NavLink></li>
                 <li><NavLink to={'/login'}>Login</NavLink></li>
@@ -38,7 +39,7 @@ const Header = () => {
           <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal px-1 !text-base">
               <li><NavLink to={'/'}>Home</NavLink></li>
-              <li><NavLink to={'/addProducts'}>Add Products</NavLink></li>
+              <li><NavLink to={'/addProduct'}>Add Products</NavLink></li>
               <li><NavLink to={'/myCart'}>My Cart</NavLink></li>
               <li><NavLink to={'/login'}>Login</NavLink></li>
             </ul>

@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import Root from './Root.jsx';
 import Home from './Home.jsx';
-import Demo from './demo.jsx';
+import AddProduct from './AddProduct';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -15,11 +15,12 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Home></Home>
+        element: <Home></Home>,
+        loader: () => fetch('http://localhost:5000/brand')
       },
       {
-        path: '/demo',
-        element: <Demo></Demo>
+        path: '/addProduct',
+        element: <AddProduct></AddProduct>
       }
     ]
   },
