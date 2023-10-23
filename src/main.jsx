@@ -22,6 +22,12 @@ import DetailsAsus from './ProductDetails/DetailsAsus';
 import DetailsRealme from './ProductDetails/DetailsRealme';
 import DetailsSony from './ProductDetails/DetailsSony';
 import DetailsXiaomi from './ProductDetails/DetailsXiaomi';
+import UpdateApple from './UpdateProducts/UpdateApple';
+import UpdateSamsung from './UpdateProducts/UpdateSamsung';
+import UpdateAsus from './UpdateProducts/UpdateAsus';
+import UpdateSony from './UpdateProducts/UpdateSony';
+import UpdateRealme from './UpdateProducts/UpdateRealme';
+import UpdateXiaomi from './UpdateProducts/UpdateXiaomi';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -102,6 +108,36 @@ const router = createBrowserRouter([
       {
         path: '/detailsXiaomi/:id',
         element: <DetailsXiaomi></DetailsXiaomi>,
+        loader: ({params}) => fetch(`http://localhost:5000/xiaomi/${params.id}`)
+      },
+      {
+        path: '/updateApple/:id',
+        element: <UpdateApple></UpdateApple>,
+        loader: ({params}) => fetch(`http://localhost:5000/apple/${params.id}`)
+      },
+      {
+        path: '/updateSamsung/:id',
+        element: <UpdateSamsung></UpdateSamsung>,
+        loader: ({params}) => fetch(`http://localhost:5000/samsung/${params.id}`)
+      },
+      {
+        path: '/updateAsus/:id',
+        element: <UpdateAsus></UpdateAsus>,
+        loader: ({params}) => fetch(`http://localhost:5000/asus/${params.id}`)
+      },
+      {
+        path: '/updateSony/:id',
+        element: <UpdateSony></UpdateSony>,
+        loader: ({params}) => fetch(`http://localhost:5000/sony/${params.id}`)
+      },
+      {
+        path: '/updateRealme/:id',
+        element: <UpdateRealme></UpdateRealme>,
+        loader: ({params}) => fetch(`http://localhost:5000/realme/${params.id}`)
+      },
+      {
+        path: '/updateXiaomi/:id',
+        element: <UpdateXiaomi></UpdateXiaomi>,
         loader: ({params}) => fetch(`http://localhost:5000/xiaomi/${params.id}`)
       }
     ]

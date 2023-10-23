@@ -16,7 +16,7 @@ const Xiaomi = () => {
                     <p className="text-xl font-medium">Brand: {product.brand}</p>
                     <p className="text-xl font-medium">Rating: {product.rating}</p>
                     <Link to={`/detailsXiaomi/${product._id}`}><button className="btn btn-accent mr-2">Details</button></Link>
-                    <Link><button className="btn btn-accent">Update</button></Link>
+                    <Link to={`/updateXiaomi/${product._id}`}><button className="btn btn-accent">Update</button></Link>
                 </div>)
             }
         </div>
