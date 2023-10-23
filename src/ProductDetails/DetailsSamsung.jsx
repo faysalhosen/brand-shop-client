@@ -3,6 +3,20 @@ import { useLoaderData } from "react-router-dom";
 const DetailsSamsung = () => {
     const samsung = useLoaderData();
     const { name, price, description, rating, URL, productType, brand } = samsung || {}
+    const handleAddToCart = () => {
+        const cart = { name, price, description, rating, URL, productType, brand }
+        fetch('http://localhost:5000/cart', {
+            method: 'POST',
+            headers: {
+                'content-Type': 'application/json'
+            },
+            body: JSON.stringify(cart)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+            });
+    };
     return (
         <div>
             <div className="card bg-base-100 shadow-xl mx-44">
@@ -17,7 +31,7 @@ const DetailsSamsung = () => {
                     <p>Brand: {brand}</p>
                     <p>Rating: {rating}</p>
                     <div className="card-actions">
-                        <button className="btn btn-primary">Add to Cart</button>
+                        <button onClick={handleAddToCart} className="btn btn-primary">Add to Cart</button>
                     </div>
                 </div>
             </div>

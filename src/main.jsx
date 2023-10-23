@@ -28,6 +28,7 @@ import UpdateAsus from './UpdateProducts/UpdateAsus';
 import UpdateSony from './UpdateProducts/UpdateSony';
 import UpdateRealme from './UpdateProducts/UpdateRealme';
 import UpdateXiaomi from './UpdateProducts/UpdateXiaomi';
+import Mycart from './Mycart';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -139,6 +140,11 @@ const router = createBrowserRouter([
         path: '/updateXiaomi/:id',
         element: <UpdateXiaomi></UpdateXiaomi>,
         loader: ({params}) => fetch(`http://localhost:5000/xiaomi/${params.id}`)
+      },
+      {
+        path: '/mycart',
+        element: <Mycart></Mycart>,
+        loader: () => fetch('http://localhost:5000/cart')
       }
     ]
   },
