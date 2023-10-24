@@ -5,7 +5,7 @@ const Xiaomi = () => {
   
     return (
         <div>
-            <div className="grid grid-cols-2 gap-20 mx-20">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-20 mx-20">
             {
                 xiaomi?.map(product => 
                 <div key={product._id} className="bg-slate-200 p-10 rounded-md">

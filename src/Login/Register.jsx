@@ -1,4 +1,12 @@
+import { useContext } from "react";
+import { AuthContext } from "./Provider/AuthProvider";
+import { updateProfile } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
+import swal from 'sweetalert';
+
 const Register = () => {
+    const {googleLogin, createUser} = useContext(AuthContext);
+    const navigate = useNavigate();
     const handleRegister = event =>{
         event.preventDefault();
         const form = event.target;
@@ -6,7 +14,47 @@ const Register = () => {
         const email = form.email.value;
         const photo = form.url.value;
         const password = form.password.value;
+
+        if(password.length <6 ){
+            swal("oops!", "Password should be at last 6 characters", "error");
+            return;
+        }
+        else if(!/[A-Z]/.test(password)){
+            swal("oops!", "Password should be at last one uppercase characters", "error");
+            return;
+        }
+        else if(!/^(?=.*[~`!@#$%^&*()--+={}\[\]|\\:;"'<>,.?/_₹]).*$/.test(password)){
+            swal("oops!", "Password be at last one special characters", "error");
+            return;
+        }
         
+        createUser(email, password)
+        .then((result) => {
+            updateProfile(result.user, {
+                displayName: name, 
+                photoURL: photo
+            })
+                .then(() => {
+
+                })
+                .catch(() => {
+
+                });
+                swal("Good job!", "User register successfully!", "success");
+                navigate('/')
+        })
+        .catch((error) => {
+            swal("oops!", `${error.message}`, "error");
+        });
+    };
+    const handleGoogleLogin = () => {
+        googleLogin()
+        .then(() => {
+            swal("Good job!", "User register successfully!", "success");
+        })
+        .catch((error) => {
+            swal("oops!", `${error.message}`, "error");
+        });
     }
     return (
         <div>
@@ -18,6 +66,9 @@ const Register = () => {
                     </div>
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                         <form onSubmit={handleRegister} className="card-body">
+                        <div onClick={handleGoogleLogin} className="bg-lime-500 px-4 flex justify-center items-center py-1 rounded">
+                                    <button className="text-center font-semibold text-2xl">Google</button>
+                                </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Name</span>
@@ -46,7 +97,7 @@ const Register = () => {
                                 </label>
                             </div>
                             <div className="form-control mt-6">
-                                <input className="bg-slate-300" type="submit" value="Register" />
+                                <input className="bg-slate-300 py-2 rounded font-semibold" type="submit" value="Register" />
                             </div>
                         </form>
                     </div>

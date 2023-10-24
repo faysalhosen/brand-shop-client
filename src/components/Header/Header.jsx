@@ -1,6 +1,21 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../Login/Provider/AuthProvider";
+import moon1 from "../../assets/night-mode.png"
+import moon2 from "../../assets/night.png"
 
-const Header = () => {
+// eslint-disable-next-line no-unused-vars
+const Header = ({darkMode, handleDarkMode}) => {
+  const { user, logOut } = useContext(AuthContext);
+  const handleLogOut = () => {
+    logOut()
+    .then(() => {
+
+    })
+    .catch(() => {
+
+    });
+  }
   return (
     <header className="bg-gradient-to-r from-[rgba(126,144,254,0.05)] to-[rgba(152,115,255,0.05)]">
       <div className="container">
@@ -47,7 +62,34 @@ const Header = () => {
             </ul>
           </div>
           <div className="navbar-end">
-            <Link to={'/jobs'} className="btn btn-primary h-auto min-h-[40px] px-3">Sign In</Link>
+            <button className="mr-3" onClick={handleDarkMode}>
+              {
+                darkMode?
+                <>
+                  <img className="w-6 h-6" src={moon1} alt="" />
+                </>
+                :
+                <>
+                  <img className="w-6 h-6" src={moon2} alt="" />
+                </>
+              }
+            </button>
+            {
+              user ?
+                <div>
+                  <div className="flex justify-center items-center">
+                    <h4 className="bg-black text-white px-5 py-1 rounded-full">{user.displayName}</h4>
+                    <img className="rounded-full w-10 h-10" src={user.photoURL} alt="" />
+                    <button onClick={handleLogOut} className="bg-black text-white px-5 py-1 rounded-full">Log Out</button>
+                  </div>
+                </div>
+                :
+                <div>
+                  <div className="">
+                    <Link to="/logIn"><button className="bg-black text-white px-5 py-1 rounded-full">Log In</button></Link>
+                  </div>
+                </div>
+            }
           </div>
         </nav>
       </div>

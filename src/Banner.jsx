@@ -14,11 +14,11 @@ const Banner = () => {
         <div className="hero-overlay bg-opacity-60"></div>
         <div className="hero-content text-center text-neutral-content">
           <div className="max-w-md">
-            <h1 className="mb-5 text-5xl font-bold">Discover the Perfect Phone for You</h1>
+            <h1 className="mb-5 text-4xl font-bold">Discover the Perfect Phone for You</h1>
             <p className="mb-5">
               Explore our wide range of mobile phones designed to suit your unique needs. From flagship devices to budget-friendly options, we have something for everyone.
             </p>
-            <button className="btn btn-primary">Shop Phones</button>
+            <button className="text-2xl font-medium px-5 rounded-2xl py-1 bg-slate-400">Shop Phones</button>
           </div>
         </div>
       </div>

@@ -1,11 +1,33 @@
+import { useContext } from "react";
+import { AuthContext } from "./Provider/AuthProvider";
+import swal from 'sweetalert';
+
 const Login = () => {
+    const {googleLogin, logIn} = useContext(AuthContext);
+
     const handleLogin =  event => {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password)
-    }
+
+        logIn(email, password)
+            .then(() => {
+                swal("Good job!", "User login successfully!", "success");
+            })
+            .catch((error) => {
+                swal("Opps!", `${error.message}`, "error");
+            });
+    };
+    const handleGoogleLogin = () => {
+        googleLogin()
+        .then(() => {
+            swal("Good job!", "user login in successfully", "success");
+        })
+        .catch((error) => {
+            swal("oops!", `${error.message}`, "error");
+        });
+    };
     return (
         <div>
             <div className="hero min-h-screen bg-base-200">
@@ -17,6 +39,9 @@ const Login = () => {
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                         <form onSubmit={handleLogin} className="card-body">
                             <div className="form-control">
+                                <div onClick={handleGoogleLogin} className="bg-lime-500 px-4 flex justify-center items-center py-1 rounded">
+                                    <button className="text-center font-semibold text-2xl">Google</button>
+                                </div>
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>

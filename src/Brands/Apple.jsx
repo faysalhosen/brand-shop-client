@@ -1,10 +1,12 @@
 import { Link, useLoaderData } from "react-router-dom";
+import Advertisement from "../Advertisement/Advertisement";
 
 const Apple = () => {
     const apple = useLoaderData();
    
     return (
-        <div className="grid grid-cols-2 gap-20 mx-20">
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-20 mx-20">
             {
                 apple?.map(product => 
                 <div key={product._id} className="bg-slate-200 p-10 rounded-md">

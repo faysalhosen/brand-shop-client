@@ -29,6 +29,8 @@ import UpdateSony from './UpdateProducts/UpdateSony';
 import UpdateRealme from './UpdateProducts/UpdateRealme';
 import UpdateXiaomi from './UpdateProducts/UpdateXiaomi';
 import Mycart from './Mycart';
+import AuthProvider from './Login/Provider/AuthProvider';
+import PriverRoute from './PrivetRoute/PriverRoute';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -41,7 +43,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/addProduct',
-        element: <AddProduct></AddProduct>
+        element: <PriverRoute><AddProduct></AddProduct></PriverRoute>
       },
       {
         path: '/login',
@@ -83,67 +85,67 @@ const router = createBrowserRouter([
       },
       {
         path: '/detailsApple/:id',
-        element: <DetailsApple></DetailsApple>,
-        loader: ({params}) => fetch(`http://localhost:5000/apple/${params.id}`)
+        element: <PriverRoute><DetailsApple></DetailsApple></PriverRoute>,
+        loader: ({ params }) => fetch(`http://localhost:5000/apple/${params.id}`)
       },
       {
         path: '/detailsSamsung/:id',
-        element: <DetailsSamsung></DetailsSamsung>,
-        loader: ({params}) => fetch(`http://localhost:5000/samsung/${params.id}`)
+        element: <PriverRoute><DetailsSamsung></DetailsSamsung></PriverRoute>,
+        loader: ({ params }) => fetch(`http://localhost:5000/samsung/${params.id}`)
       },
       {
         path: '/detailsAsus/:id',
-        element: <DetailsAsus></DetailsAsus>,
-        loader: ({params}) => fetch(`http://localhost:5000/asus/${params.id}`)
+        element: <PriverRoute><DetailsAsus></DetailsAsus></PriverRoute>,
+        loader: ({ params }) => fetch(`http://localhost:5000/asus/${params.id}`)
       },
       {
         path: '/detailsRealme/:id',
-        element: <DetailsRealme></DetailsRealme>,
-        loader: ({params}) => fetch(`http://localhost:5000/realme/${params.id}`)
+        element: <PriverRoute><DetailsRealme></DetailsRealme></PriverRoute>,
+        loader: ({ params }) => fetch(`http://localhost:5000/realme/${params.id}`)
       },
       {
         path: '/detailsSony/:id',
-        element: <DetailsSony></DetailsSony>,
-        loader: ({params}) => fetch(`http://localhost:5000/sony/${params.id}`)
+        element: <PriverRoute><DetailsSony></DetailsSony></PriverRoute>,
+        loader: ({ params }) => fetch(`http://localhost:5000/sony/${params.id}`)
       },
       {
         path: '/detailsXiaomi/:id',
-        element: <DetailsXiaomi></DetailsXiaomi>,
-        loader: ({params}) => fetch(`http://localhost:5000/xiaomi/${params.id}`)
+        element:<PriverRoute><DetailsXiaomi></DetailsXiaomi></PriverRoute>,
+        loader: ({ params }) => fetch(`http://localhost:5000/xiaomi/${params.id}`)
       },
       {
         path: '/updateApple/:id',
-        element: <UpdateApple></UpdateApple>,
-        loader: ({params}) => fetch(`http://localhost:5000/apple/${params.id}`)
+        element: <PriverRoute><UpdateApple></UpdateApple></PriverRoute>,
+        loader: ({ params }) => fetch(`http://localhost:5000/apple/${params.id}`)
       },
       {
         path: '/updateSamsung/:id',
-        element: <UpdateSamsung></UpdateSamsung>,
-        loader: ({params}) => fetch(`http://localhost:5000/samsung/${params.id}`)
+        element: <PriverRoute><UpdateSamsung></UpdateSamsung></PriverRoute>,
+        loader: ({ params }) => fetch(`http://localhost:5000/samsung/${params.id}`)
       },
       {
         path: '/updateAsus/:id',
-        element: <UpdateAsus></UpdateAsus>,
-        loader: ({params}) => fetch(`http://localhost:5000/asus/${params.id}`)
+        element: <PriverRoute><UpdateAsus></UpdateAsus></PriverRoute>,
+        loader: ({ params }) => fetch(`http://localhost:5000/asus/${params.id}`)
       },
       {
         path: '/updateSony/:id',
-        element: <UpdateSony></UpdateSony>,
-        loader: ({params}) => fetch(`http://localhost:5000/sony/${params.id}`)
+        element: <PriverRoute><UpdateSony></UpdateSony></PriverRoute>,
+        loader: ({ params }) => fetch(`http://localhost:5000/sony/${params.id}`)
       },
       {
         path: '/updateRealme/:id',
-        element: <UpdateRealme></UpdateRealme>,
-        loader: ({params}) => fetch(`http://localhost:5000/realme/${params.id}`)
+        element: <PriverRoute><UpdateRealme></UpdateRealme></PriverRoute>,
+        loader: ({ params }) => fetch(`http://localhost:5000/realme/${params.id}`)
       },
       {
         path: '/updateXiaomi/:id',
-        element: <UpdateXiaomi></UpdateXiaomi>,
-        loader: ({params}) => fetch(`http://localhost:5000/xiaomi/${params.id}`)
+        element: <PriverRoute><UpdateXiaomi></UpdateXiaomi></PriverRoute>,
+        loader: ({ params }) => fetch(`http://localhost:5000/xiaomi/${params.id}`)
       },
       {
         path: '/mycart',
-        element: <Mycart></Mycart>,
+        element: <PriverRoute><Mycart></Mycart></PriverRoute>,
         loader: () => fetch('http://localhost:5000/cart')
       }
     ]
@@ -152,6 +154,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>,
 )
