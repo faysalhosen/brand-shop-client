@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
+import swal from "sweetalert";
 
 const Mycart = () => {
     const loadedcart = useLoaderData();
     const [cart, setCart] = useState(loadedcart);
     const handleRemove = (id) => {
-        fetch(`http://localhost:5000/cart/${id}`, {
+        fetch(`https://brand-shop-server-pl22da2d3-faysalhosen.vercel.app/cart/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
@@ -13,7 +14,7 @@ const Mycart = () => {
                 if(data?.deletedCount > 0){
                     const remaining = cart.filter(product => product._id !== id);
                     setCart(remaining);
-                    alert('deleted successfully');
+                    swal("Good job!", "products delete successfully", "success")
                 }
             });
     };

@@ -1,11 +1,12 @@
 import { useLoaderData } from "react-router-dom";
+import swal from "sweetalert";
 
 const DetailsApple = () => {
     const apple = useLoaderData();
     const { name, price, description, rating, URL, productType, brand } = apple || {}
     const handleAddToCart = () => {
         const cart = { name, price, description, rating, URL, productType, brand }
-        fetch('http://localhost:5000/cart', {
+        fetch('https://brand-shop-server-pl22da2d3-faysalhosen.vercel.app/cart', {
             method: 'POST',
             headers: {
                 'content-Type': 'application/json'
@@ -13,8 +14,9 @@ const DetailsApple = () => {
             body: JSON.stringify(cart)
         })
             .then(res => res.json())
-            .then(data => {
-                console.log(data);
+            .then(data => {              
+                    swal("Good job!", "product added successfully", "success");
+    
             });
     };
 

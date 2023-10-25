@@ -23,7 +23,7 @@ const UpdateXiaomi = () => {
         const URL = form.photo.value;
         const products = { name, price, description, rating, URL, productType, brand };
 
-        fetch(`http://localhost:5000/xiaomi/${xiaomi._id}`, {
+        fetch(`https://brand-shop-server-pl22da2d3-faysalhosen.vercel.app/xiaomi/${xiaomi._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
