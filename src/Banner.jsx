@@ -7,8 +7,8 @@ const Banner = () => {
         className="hero min-h-screen"
         style={{
           backgroundImage:
-            "url(https://i.ibb.co/rFR8YSy/screen.webp)",
-            //https://www.gadstyle.com/wp-content/uploads/2023/05/screen-protector-web-banner-Design-small-768x384.webp
+            "url(https://i.ibb.co/Y8jkfY3/banner-coverpage.png)",
+
         }}
       >
         <div className="hero-overlay bg-opacity-60"></div>
