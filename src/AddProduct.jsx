@@ -1,4 +1,5 @@
 import { useState } from "react";
+import swal from "sweetalert";
 const AddProduct = () => {
     const [brand, setBrand] = useState('apple');
     const [productType, setProductType] = useState('phone');
@@ -23,7 +24,7 @@ const AddProduct = () => {
 
 
         console.log(products)
-        fetch(`https://brand-shop-server-pl22da2d3-faysalhosen.vercel.app/${brand}`, {
+        fetch(`https://brand-shop-server-rk38sh018-faysalhosen.vercel.app/${brand}`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -34,7 +35,7 @@ const AddProduct = () => {
             .then(data => {
                 console.log(data);
                 if(data.acknowledged){
-                    alert('Product added successfully')
+                    swal("Good job!", "products added successfully", "success")
                 }
             });
     };

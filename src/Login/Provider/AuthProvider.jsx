@@ -1,9 +1,12 @@
 import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
-import app from "../../Firebase/firebase.config";
+//import app from "../../Firebase/firebase.config";
+import {app} from "../../Firebase/firebase.config"
+
 const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
 export const AuthContext = createContext(null);
+// eslint-disable-next-line react/prop-types
 const AuthProvider = ({children}) => {
     const [user, setuser] = useState(null);
     const [loading, setLoading] = useState(true);

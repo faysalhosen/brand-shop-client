@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useLoaderData } from "react-router-dom";
+import swal from "sweetalert";
 
 const UpdateSamsung = () => {
     const samsung = useLoaderData();
@@ -23,7 +24,7 @@ const UpdateSamsung = () => {
         const URL = form.photo.value;
         const products = { name, price, description, rating, URL, productType, brand };
 
-        fetch(`https://brand-shop-server-pl22da2d3-faysalhosen.vercel.app/samsung/${samsung._id}`, {
+        fetch(`https://brand-shop-server-rk38sh018-faysalhosen.vercel.app/samsung/${samsung._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -33,7 +34,7 @@ const UpdateSamsung = () => {
             .then(res => res.json())
             .then(data => {
                 if(data.modifiedCount > 0){
-                    alert('Product updated successfully');
+                    swal("Good job!", "products Updated successfully", "success")
                 }
             });
     };

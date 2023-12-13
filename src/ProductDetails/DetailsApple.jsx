@@ -6,7 +6,7 @@ const DetailsApple = () => {
     const { name, price, description, rating, URL, productType, brand } = apple || {}
     const handleAddToCart = () => {
         const cart = { name, price, description, rating, URL, productType, brand }
-        fetch('https://brand-shop-server-pl22da2d3-faysalhosen.vercel.app/cart', {
+        fetch('https://brand-shop-server-rk38sh018-faysalhosen.vercel.app/cart', {
             method: 'POST',
             headers: {
                 'content-Type': 'application/json'

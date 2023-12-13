@@ -1,8 +1,7 @@
 
 #Brand-Shop
 
-live link:https://brand-shop-15abe.web.app/
-
+live link: https://brand-shop-6bcb5.web.app/
 
 Project Overview
 Brand-Shop is a client-side web application that aims to provide users with an immersive and user-friendly online shopping experience. This application is designed to showcase and sell a variety of brands and their products, offering a sleek and intuitive interface for customers to browse and make purchases.

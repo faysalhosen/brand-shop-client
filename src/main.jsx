@@ -41,7 +41,7 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
-        loader: () => fetch('https://brand-shop-server-pl22da2d3-faysalhosen.vercel.app/brand')
+        loader: () => fetch('https://brand-shop-server-rk38sh018-faysalhosen.vercel.app/brand')
       },
       {
         path: '/addProduct',
@@ -58,97 +58,97 @@ const router = createBrowserRouter([
       {
         path: '/apple',
         element: <Apple></Apple>,
-        loader: () => fetch('https://brand-shop-server-pl22da2d3-faysalhosen.vercel.app/apple')
+        loader: () => fetch('https://brand-shop-server-rk38sh018-faysalhosen.vercel.app/apple')
       },
       {
         path: '/samsung',
         element: <Samsung></Samsung>,
-        loader: () => fetch('https://brand-shop-server-pl22da2d3-faysalhosen.vercel.app/samsung')
+        loader: () => fetch('https://brand-shop-server-rk38sh018-faysalhosen.vercel.app/samsung')
       },
       {
         path: '/sony',
         element: <Sony></Sony>,
-        loader: () => fetch('https://brand-shop-server-pl22da2d3-faysalhosen.vercel.app/sony')
+        loader: () => fetch('https://brand-shop-server-rk38sh018-faysalhosen.vercel.app/sony')
       },
       {
         path: '/xiaomi',
         element: <Xiaomi></Xiaomi>,
-        loader: () => fetch('https://brand-shop-server-pl22da2d3-faysalhosen.vercel.app/xiaomi')
+        loader: () => fetch('https://brand-shop-server-rk38sh018-faysalhosen.vercel.app/xiaomi')
       },
       {
         path: '/realme',
         element: <Realme></Realme>,
-        loader: () => fetch('https://brand-shop-server-pl22da2d3-faysalhosen.vercel.app/realme')
+        loader: () => fetch('https://brand-shop-server-rk38sh018-faysalhosen.vercel.app/realme')
       },
       {
         path: '/asus',
         element: <Asus></Asus>,
-        loader: () => fetch('https://brand-shop-server-pl22da2d3-faysalhosen.vercel.app/asus')
+        loader: () => fetch('https://brand-shop-server-rk38sh018-faysalhosen.vercel.app/asus')
       },
       {
         path: '/detailsApple/:id',
         element: <PriverRoute><DetailsApple></DetailsApple></PriverRoute>,
-        loader: ({ params }) => fetch(`https://brand-shop-server-pl22da2d3-faysalhosen.vercel.app/apple/${params.id}`)
+        loader: ({ params }) => fetch(`https://brand-shop-server-rk38sh018-faysalhosen.vercel.app/apple/${params.id}`)
       },
       {
         path: '/detailsSamsung/:id',
         element: <PriverRoute><DetailsSamsung></DetailsSamsung></PriverRoute>,
-        loader: ({ params }) => fetch(`https://brand-shop-server-pl22da2d3-faysalhosen.vercel.app/samsung/${params.id}`)
+        loader: ({ params }) => fetch(`https://brand-shop-server-rk38sh018-faysalhosen.vercel.app/samsung/${params.id}`)
       },
       {
         path: '/detailsAsus/:id',
         element: <PriverRoute><DetailsAsus></DetailsAsus></PriverRoute>,
-        loader: ({ params }) => fetch(`https://brand-shop-server-pl22da2d3-faysalhosen.vercel.app/asus/${params.id}`)
+        loader: ({ params }) => fetch(`https://brand-shop-server-rk38sh018-faysalhosen.vercel.app/asus/${params.id}`)
       },
       {
         path: '/detailsRealme/:id',
         element: <PriverRoute><DetailsRealme></DetailsRealme></PriverRoute>,
-        loader: ({ params }) => fetch(`https://brand-shop-server-pl22da2d3-faysalhosen.vercel.app/realme/${params.id}`)
+        loader: ({ params }) => fetch(`https://brand-shop-server-rk38sh018-faysalhosen.vercel.app/realme/${params.id}`)
       },
       {
         path: '/detailsSony/:id',
         element: <PriverRoute><DetailsSony></DetailsSony></PriverRoute>,
-        loader: ({ params }) => fetch(`https://brand-shop-server-pl22da2d3-faysalhosen.vercel.app/sony/${params.id}`)
+        loader: ({ params }) => fetch(`https://brand-shop-server-rk38sh018-faysalhosen.vercel.app/sony/${params.id}`)
       },
       {
         path: '/detailsXiaomi/:id',
         element:<PriverRoute><DetailsXiaomi></DetailsXiaomi></PriverRoute>,
-        loader: ({ params }) => fetch(`https://brand-shop-server-pl22da2d3-faysalhosen.vercel.app/xiaomi/${params.id}`)
+        loader: ({ params }) => fetch(`https://brand-shop-server-rk38sh018-faysalhosen.vercel.app/xiaomi/${params.id}`)
       },
       {
         path: '/updateApple/:id',
         element: <PriverRoute><UpdateApple></UpdateApple></PriverRoute>,
-        loader: ({ params }) => fetch(`https://brand-shop-server-pl22da2d3-faysalhosen.vercel.app/apple/${params.id}`)
+        loader: ({ params }) => fetch(`https://brand-shop-server-rk38sh018-faysalhosen.vercel.app/apple/${params.id}`)
       },
       {
         path: '/updateSamsung/:id',
         element: <PriverRoute><UpdateSamsung></UpdateSamsung></PriverRoute>,
-        loader: ({ params }) => fetch(`https://brand-shop-server-pl22da2d3-faysalhosen.vercel.app/samsung/${params.id}`)
+        loader: ({ params }) => fetch(`https://brand-shop-server-rk38sh018-faysalhosen.vercel.app/samsung/${params.id}`)
       },
       {
         path: '/updateAsus/:id',
         element: <PriverRoute><UpdateAsus></UpdateAsus></PriverRoute>,
-        loader: ({ params }) => fetch(`https://brand-shop-server-pl22da2d3-faysalhosen.vercel.app/asus/${params.id}`)
+        loader: ({ params }) => fetch(`https://brand-shop-server-rk38sh018-faysalhosen.vercel.app/asus/${params.id}`)
       },
       {
         path: '/updateSony/:id',
         element: <PriverRoute><UpdateSony></UpdateSony></PriverRoute>,
-        loader: ({ params }) => fetch(`https://brand-shop-server-pl22da2d3-faysalhosen.vercel.app/sony/${params.id}`)
+        loader: ({ params }) => fetch(`https://brand-shop-server-rk38sh018-faysalhosen.vercel.app/sony/${params.id}`)
       },
       {
         path: '/updateRealme/:id',
         element: <PriverRoute><UpdateRealme></UpdateRealme></PriverRoute>,
-        loader: ({ params }) => fetch(`https://brand-shop-server-pl22da2d3-faysalhosen.vercel.app/realme/${params.id}`)
+        loader: ({ params }) => fetch(`https://brand-shop-server-rk38sh018-faysalhosen.vercel.app/realme/${params.id}`)
       },
       {
         path: '/updateXiaomi/:id',
         element: <PriverRoute><UpdateXiaomi></UpdateXiaomi></PriverRoute>,
-        loader: ({ params }) => fetch(`https://brand-shop-server-pl22da2d3-faysalhosen.vercel.app/xiaomi/${params.id}`)
+        loader: ({ params }) => fetch(`https://brand-shop-server-rk38sh018-faysalhosen.vercel.app/xiaomi/${params.id}`)
       },
       {
         path: '/mycart',
         element: <PriverRoute><Mycart></Mycart></PriverRoute>,
-        loader: () => fetch('https://brand-shop-server-pl22da2d3-faysalhosen.vercel.app/cart')
+        loader: () => fetch('https://brand-shop-server-rk38sh018-faysalhosen.vercel.app/cart')
       }
     ]
   },
