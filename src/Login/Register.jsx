@@ -3,6 +3,7 @@ import { AuthContext } from "./Provider/AuthProvider";
 import { updateProfile } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import swal from 'sweetalert';
+import { FaGoogle } from "react-icons/fa";
 
 const Register = () => {
     const {googleLogin, createUser} = useContext(AuthContext);
@@ -61,14 +62,12 @@ const Register = () => {
             <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className="text-center lg:text-left">
-                        <h1 className="text-5xl font-bold">Login now!</h1>
+                        <h1 className="text-5xl font-bold">Register now!</h1>
                         <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
                     </div>
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                         <form onSubmit={handleRegister} className="card-body">
-                        <div onClick={handleGoogleLogin} className="bg-lime-500 px-4 flex justify-center items-center py-1 rounded">
-                                    <button className="text-center font-semibold text-2xl">Google</button>
-                                </div>
+                        
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Name</span>
@@ -97,8 +96,12 @@ const Register = () => {
                                 </label>
                             </div>
                             <div className="form-control mt-6">
-                                <input className="bg-slate-300 py-2 rounded font-semibold" type="submit" value="Register" />
+                                <input className="bg-slate-600 text-white py-2 rounded font-semibold" type="submit" value="Register" />
                             </div>
+                            <div onClick={handleGoogleLogin} className=" px-4 flex justify-center items-center py-1 rounded">
+                                    <button className="text-center text-2xl"> <FaGoogle></FaGoogle></button>
+                                </div>
+                           
                         </form>
                     </div>
                 </div>

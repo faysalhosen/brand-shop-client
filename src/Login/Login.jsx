@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import { AuthContext } from "./Provider/AuthProvider";
 import swal from 'sweetalert';
+import { FaGoogle } from "react-icons/fa";
+
 
 const Login = () => {
     const {googleLogin, logIn} = useContext(AuthContext);
@@ -39,9 +41,7 @@ const Login = () => {
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                         <form onSubmit={handleLogin} className="card-body">
                             <div className="form-control">
-                                <div onClick={handleGoogleLogin} className="bg-lime-500 px-4 flex justify-center items-center py-1 rounded">
-                                    <button className="text-center font-semibold text-2xl">Google</button>
-                                </div>
+                                
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
@@ -57,7 +57,10 @@ const Login = () => {
                                 </label>
                             </div>
                             <div className="form-control mt-6">
-                                <button className="btn btn-primary">Login</button>
+                                <button className="bg-slate-600 text-white">Login</button>
+                                <div onClick={handleGoogleLogin} className=" px-4 flex justify-center items-center py-1 rounded">
+                                    <button className="text-center text-2xl"> <FaGoogle></FaGoogle></button>
+                                </div>
                             </div>
                         </form>
                     </div>
